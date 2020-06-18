@@ -32,7 +32,7 @@ public class Aluno {
 		
 		if(obj instanceof Aluno) {
 			Aluno aluno = (Aluno) obj;
-			if(this.getNome() == aluno.getNome()) {
+			if(this.getNome() == aluno.getNome() && this.getIdade() == aluno.getIdade()) {
 				return true;
 			}
 		}

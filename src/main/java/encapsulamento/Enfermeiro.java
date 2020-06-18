@@ -1,35 +1,25 @@
 package encapsulamento;
 
-public class Medico implements Especialista {
+public class Enfermeiro implements Especialista {
 
 	private Pessoa pessoa = new Pessoa();
 
-	public Medico(String nome, String cpf, String telefone) {
+	public Enfermeiro(String nome, String cpf, String telefone) {
 		pessoa.setNome(nome);
 		pessoa.setCpf(cpf);
 		pessoa.setTelefone(telefone);
-
 	}
-
+	
 	@Override
 	public Pessoa retornaInformacoes() {
-		return this.pessoa;
-	}
-
-	public Pessoa getPessoa() {
 		return pessoa;
-	}
-
-	@Override
-	public String toString() {
-		return "Medico [pessoa=" + pessoa + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((pessoa == null) ? 0 : pessoa.hashCode());
+		result = prime * result + pessoa.hashCode();
 		return result;
 	}
 
@@ -41,22 +31,28 @@ public class Medico implements Especialista {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Medico other = (Medico) obj;
-		if (pessoa == null) {
-			if (other.pessoa != null)
-				return false;
-		} else if (!pessoa.getCpf().equals(other.pessoa.getCpf()))
+		Enfermeiro other = (Enfermeiro) obj;
+		if (!pessoa.getCpf().equals(other.pessoa.getCpf()))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Enfermeiro [pessoa=" + pessoa.getNome() + "]";
+	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
+	
 	@Override
 	public String retornaNome() {
-		System.out.println("Classe Medico");
+		System.out.println("Classe Enfermeiro");
 		return this.pessoa.getNome();
 	}
 

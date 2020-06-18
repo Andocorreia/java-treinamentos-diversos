@@ -35,9 +35,7 @@ public class Pessoa {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
+		result = prime * result + cpf.hashCode();
 		return result;
 	}
 
@@ -50,20 +48,7 @@ public class Pessoa {
 		if (getClass() != obj.getClass())
 			return false;
 		Pessoa other = (Pessoa) obj;
-		if (cpf == null) {
-			if (other.cpf != null)
-				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (telefone == null) {
-			if (other.telefone != null)
-				return false;
-		} else if (!telefone.equals(other.telefone))
+		if (!cpf.equals(other.cpf))
 			return false;
 		return true;
 	}
